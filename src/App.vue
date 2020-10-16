@@ -6,6 +6,7 @@
     <SlackResult v-bind:slacks="slacks" />
     <ContactResult v-bind:contacts="contacts" />
     <CalendarResult v-bind:calendars="calendars" />
+    <DropboxResult v-bind:dropboxs="dropboxs" />
     {{stringValue}}
   </div>
 </template>
@@ -15,10 +16,12 @@
   import SlackResult from '@/components/SlackResult.vue'
   import ContactResult from '@/components/ContactResult.vue'
   import CalendarResult from '@/components/CalendarResult.vue'
+  import DropboxResult from '@/components/DropboxResult.vue'
 
   import { contactData } from './assets/contactData'
   import { slackData } from './assets/slackData'
   import { calendarData } from './assets/calendarData'
+  import { dropboxData } from './assets/dropboxData'
 
   export default {
     name: 'app',
@@ -27,6 +30,7 @@
       SlackResult,
       ContactResult,
       CalendarResult,
+      DropboxResult,
 
     },
     data() {
@@ -34,6 +38,7 @@
         slacks: slackData.slack,  
         contacts: contactData.contacts,
         calendars: calendarData.calendar,
+        dropboxs: dropboxData.dropbox,
         stringValue: '',
       }
     },

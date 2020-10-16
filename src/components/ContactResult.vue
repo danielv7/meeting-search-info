@@ -1,6 +1,6 @@
 <template>
   <div id="contact-result">
-    <h5 class="vertical-left">Contacts</h5>
+    <h5 class="vertical-left">Contact Information</h5>
     <table>
       <thead>
         <tr>
