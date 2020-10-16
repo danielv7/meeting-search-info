@@ -57,8 +57,8 @@ button {
   
 }
 button:hover {
-  background-color: rgb(77, 82, 77); 
-  border: 1px solid rgb(77, 82, 77);
+  background-color: rgb(77, 82, 78); 
+  border: 1px solid rgb(77, 82, 78);
   
 }
 .small-container {
