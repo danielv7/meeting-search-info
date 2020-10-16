@@ -23,6 +23,7 @@
       if (this.searchString) {
         console.log('testing handleSubmit')
         this.stringContent = this.searchString;
+        this.$emit('search-value', this.searchString)
         }
         this.searchString = '';
       },

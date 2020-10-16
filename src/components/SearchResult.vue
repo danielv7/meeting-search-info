@@ -3,8 +3,8 @@
     <table>
       <thead>
         <tr>
-          <th>Employee name</th>
-          <th>Employee email</th>
+          <th>Channel</th>
+          <th>Author</th>
         </tr>
       </thead>
       <tbody>

@@ -2,7 +2,7 @@
   <div id="app" class="small-container">
     <h1 class="vertical-center">Search Upcoming Meeting Information</h1>
 
-    <SearchField @search:input="searchInput"/>
+    <SearchField v-on:search-value="searchInput($event)"/>
     <SearchResult v-bind:employees="employees" />
     {{stringValue}}
   </div>
@@ -38,6 +38,7 @@
             email: 'dinesh@piedpiper.com',
           },
         ],
+        stringValue: '',
       }
     },
     methods: {
