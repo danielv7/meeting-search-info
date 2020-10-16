@@ -1,16 +1,21 @@
 <template>
   <div id="search-result">
+    <h5 class="vertical-left">Slack Content</h5>
     <table>
       <thead>
         <tr>
           <th>Channel</th>
           <th>Author</th>
+          <th>Message</th>
+          <th>Date</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="employee in employees" :key="employee.id">
-          <td>{{ employee.name }}</td>
-          <td>{{ employee.email }}</td>
+        <tr v-for="slack in slacks" :key="slack.id">
+          <td>{{ slack.channel }}</td>
+          <td>{{ slack.author }}</td>
+          <td>{{ slack.message }}</td>
+          <td>{{ slack.timestamp }}</td>
         </tr>
       </tbody>
     </table>
@@ -22,7 +27,7 @@
   export default {
   name: 'search-result',
   props: {
-    employees: Array,
+    slacks: Array,
   },
 }
 </script>

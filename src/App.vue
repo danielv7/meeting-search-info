@@ -3,7 +3,7 @@
     <h1 class="vertical-center">Search Upcoming Meeting Information</h1>
 
     <SearchField v-on:search-value="searchInput($event)"/>
-    <SearchResult v-bind:employees="employees" />
+    <SearchResult v-bind:slacks="slacks" />
     {{stringValue}}
   </div>
 </template>
@@ -21,21 +21,27 @@
     },
     data() {
       return {
-        employees: [
+        slacks: [
           {
-            id: 1,
-            name: 'Richard Hendricks',
-            email: 'richard@piedpiper.com',
+            id: "12345",
+            channel: "chatter",
+            author: "alice",
+            message: "Who's up for lunch right now?",
+            timestamp: "2019-02-26 11:00:00",
           },
           {
-            id: 2,
-            name: 'Bertram Gilfoyle',
-            email: 'gilfoyle@piedpiper.com',
+            id: "12346",
+            channel: "chatter",
+            author: "bob",
+            message: "I am up for lunch!",
+            timestamp: "2019-02-26 11:00:01",
           },
           {
-            id: 3,
-            name: 'Dinesh Chugtai',
-            email: 'dinesh@piedpiper.com',
+            id: "12347",
+            channel: "chatter",
+            author: "carol",
+            message: "Me too @alice!",
+            timestamp: "2019-02-26 11:00:02",
           },
         ],
         stringValue: '',
