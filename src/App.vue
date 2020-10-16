@@ -14,6 +14,9 @@
   import SlackResult from '@/components/SlackResult.vue'
   import ContactResult from '@/components/ContactResult.vue'
 
+  import { contactData } from './assets/contactData'
+  import { slackData } from './assets/slackData'
+
   export default {
     name: 'app',
     components: {
@@ -24,58 +27,8 @@
     },
     data() {
       return {
-        slacks: [
-          {
-            id: "12345",
-            channel: "chatter",
-            author: "alice",
-            message: "Who's up for lunch right now?",
-            timestamp: "2019-02-26 11:00:00",
-          },
-          {
-            id: "12346",
-            channel: "chatter",
-            author: "bob",
-            message: "I am up for lunch!",
-            timestamp: "2019-02-26 11:00:01",
-          },
-          {
-            id: "12347",
-            channel: "chatter",
-            author: "carol",
-            message: "Me too @alice!",
-            timestamp: "2019-02-26 11:00:02",
-          },
-        ],
-        contacts: [
-          {
-            id: "12345",
-            name: "John Doe",
-            company: "Acme Inc",
-            emails: [
-              "john@acme.co",
-              "doe@gmail.com"
-            ],
-            phones: [
-              "650-555-5555",
-              "+44 171 5555 5555"
-            ],
-            last_contact: "2019-02-26"
-          },
-          {
-            id: "31456",
-            name: "Robert Roe",
-            company: "Acme Inc",
-            emails: [
-              "bob@acme.co"
-            ],
-            phones: [
-              "+44 171 6666 5555"
-            ],
-            last_contact: "2019-02-29"
-          },
-
-        ],
+        slacks: slackData.slack,  
+        contacts: contactData.contacts,
         stringValue: '',
       }
     },
