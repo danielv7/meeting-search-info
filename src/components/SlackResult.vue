@@ -5,7 +5,6 @@
       <thead>
         <tr>
           <th>Channel</th>
-          <th>Author</th>
           <th>Message</th>
           <th>Date</th>
         </tr>
@@ -13,8 +12,7 @@
       <tbody>
         <tr v-for="slack in slacks" :key="slack.id">
           <td>{{ slack.channel }}</td>
-          <td>{{ slack.author }}</td>
-          <td>{{ slack.message }}</td>
+          <td><strong>{{ slack.author }}</strong>-{{ slack.message }}</td>
           <td>{{ slack.timestamp }}</td>
         </tr>
       </tbody>

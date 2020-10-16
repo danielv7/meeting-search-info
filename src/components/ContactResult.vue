@@ -6,9 +6,9 @@
         <tr>
           <th>Name</th>
           <th>Company</th>
-          <th>Email's</th>
-          <th>Phone Number's</th>
-          <th>Last Content</th>
+          <th>Email Address</th>
+          <th>Phone Number(s)</th>
+          <th>Last Contact</th>
         </tr>
       </thead>
       <tbody>

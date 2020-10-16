@@ -5,6 +5,7 @@
     <SearchField v-on:search-value="searchInput($event)"/>
     <SlackResult v-bind:slacks="slacks" />
     <ContactResult v-bind:contacts="contacts" />
+    <CalendarResult v-bind:calendars="calendars" />
     {{stringValue}}
   </div>
 </template>
@@ -13,9 +14,11 @@
   import SearchField from '@/components/SearchField.vue'  
   import SlackResult from '@/components/SlackResult.vue'
   import ContactResult from '@/components/ContactResult.vue'
+  import CalendarResult from '@/components/CalendarResult.vue'
 
   import { contactData } from './assets/contactData'
   import { slackData } from './assets/slackData'
+  import { calendarData } from './assets/calendarData'
 
   export default {
     name: 'app',
@@ -23,12 +26,14 @@
       SearchField,
       SlackResult,
       ContactResult,
+      CalendarResult,
 
     },
     data() {
       return {
         slacks: slackData.slack,  
         contacts: contactData.contacts,
+        calendars: calendarData.calendar,
         stringValue: '',
       }
     },
@@ -54,6 +59,6 @@ button:hover {
   
 }
 .small-container {
-  max-width: 680px;
+  max-width: 700px;
 }
 </style>
