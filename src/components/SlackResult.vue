@@ -1,5 +1,5 @@
 <template>
-  <div id="search-result">
+  <div id="slack-result">
     <h5 class="vertical-left">Slack Content</h5>
     <table>
       <thead>
@@ -25,7 +25,7 @@
 
 <script>
   export default {
-  name: 'search-result',
+  name: 'slack-result',
   props: {
     slacks: Array,
   },

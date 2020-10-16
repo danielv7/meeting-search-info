@@ -3,20 +3,23 @@
     <h1 class="vertical-center">Search Upcoming Meeting Information</h1>
 
     <SearchField v-on:search-value="searchInput($event)"/>
-    <SearchResult v-bind:slacks="slacks" />
+    <SlackResult v-bind:slacks="slacks" />
+    <ContactResult v-bind:contacts="contacts" />
     {{stringValue}}
   </div>
 </template>
 
 <script>
   import SearchField from '@/components/SearchField.vue'  
-  import SearchResult from '@/components/SearchResult.vue'
+  import SlackResult from '@/components/SlackResult.vue'
+  import ContactResult from '@/components/ContactResult.vue'
 
   export default {
     name: 'app',
     components: {
       SearchField,
-      SearchResult,
+      SlackResult,
+      ContactResult,
 
     },
     data() {
@@ -43,6 +46,35 @@
             message: "Me too @alice!",
             timestamp: "2019-02-26 11:00:02",
           },
+        ],
+        contacts: [
+          {
+            id: "12345",
+            name: "John Doe",
+            company: "Acme Inc",
+            emails: [
+              "john@acme.co",
+              "doe@gmail.com"
+            ],
+            phones: [
+              "650-555-5555",
+              "+44 171 5555 5555"
+            ],
+            last_contact: "2019-02-26"
+          },
+          {
+            id: "31456",
+            name: "Robert Roe",
+            company: "Acme Inc",
+            emails: [
+              "bob@acme.co"
+            ],
+            phones: [
+              "+44 171 6666 5555"
+            ],
+            last_contact: "2019-02-29"
+          },
+
         ],
         stringValue: '',
       }
