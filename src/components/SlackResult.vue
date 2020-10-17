@@ -7,6 +7,7 @@
           <th>Channel</th>
           <th>Message</th>
           <th>Date</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -14,10 +15,15 @@
           <td>{{ slack.channel }}</td>
           <td><strong>{{ slack.author }}</strong>-{{ slack.message }}</td>
           <td>{{ slack.timestamp }}</td>
+          <td>
+            <button @click="$emit('delete-slack', slack.id)">Delete</button>
+          </td>
         </tr>
       </tbody>
     </table>
-    
+
+  
+
   </div>
 </template>
 

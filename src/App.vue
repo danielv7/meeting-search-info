@@ -3,7 +3,10 @@
     <h1 class="vertical-center">Search Upcoming Meeting Information</h1>
 
     <SearchField v-on:search-value="searchInput($event)"/>
-    <SlackResult v-bind:slacks="slacks" />
+    <SlackResult 
+      v-bind:slacks="slacks" 
+      v-on:delete-slack="deleteSlack($event)"
+    />
     <ContactResult v-bind:contacts="contacts" />
     <CalendarResult v-bind:calendars="calendars" />
     <DropboxResult v-bind:dropboxs="dropboxs" />
@@ -75,10 +78,13 @@
         this.tweets = this.tweets.filter(tweet =>
         tweet.matching_terms.includes(searchString))
 
-
         },
-
-      }
+      deleteSlack(id) {
+        this.slacks = this.slacks.filter(
+          slack => slack.id !== id
+        )
+      },
+    }
   }
 
 </script>
