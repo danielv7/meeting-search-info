@@ -19,14 +19,19 @@
       }
     },
     methods: {
-    handleSubmit() {
-      if (this.searchString) {
-        console.log('testing handleSubmit')
-        this.stringContent = this.searchString;
-        this.$emit('search-value', this.searchString)
-        }
-        this.searchString = '';
-      },
+      handleSubmit() {
+        if (this.searchString) {
+          this.stringContent = this.searchString;
+          this.searchString = this.lowerString
+          this.$emit('search-value', this.searchString)
+          }
+          this.searchString = '';
+        }, 
+    },
+    computed: {
+      lowerString() {
+        return this.searchString.toLowerCase()
+      }
     },
   }
 </script>

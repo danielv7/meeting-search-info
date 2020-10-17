@@ -142,7 +142,7 @@ button:hover {
   max-width: 1000px;
 }
 .small-container {
-  max-width: 750px;
+  max-width: 700px;
 }
 
 
