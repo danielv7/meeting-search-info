@@ -44,7 +44,7 @@
         contacts: [],
         calendars: [],
         dropboxs: [],
-        tweets: tweetData.tweet,
+        tweets: [],
         stringValue: '',
       }
     },
@@ -70,6 +70,10 @@
         this.dropboxs = dropboxData.dropbox
         this.dropboxs = this.dropboxs.filter(dropbox =>
         dropbox.matching_terms.includes(searchString))
+
+        this.tweets = tweetData.tweet
+        this.tweets = this.tweets.filter(tweet =>
+        tweet.matching_terms.includes(searchString))
 
 
         },
