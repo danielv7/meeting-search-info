@@ -20,7 +20,7 @@
   import CalendarResult from '@/components/CalendarResult.vue'
   import DropboxResult from '@/components/DropboxResult.vue'
   import TweetResult from '@/components/TweetResult.vue'
-  
+
   import { slackData } from './assets/slackData'
   import { contactData } from './assets/contactData'
   import { calendarData } from './assets/calendarData'
@@ -40,8 +40,8 @@
     },
     data() {
       return {
-        slacks: slackData.slack,  
-        contacts: contactData.contacts,
+        slacks: [],  
+        contacts: [],
         calendars: calendarData.calendar,
         dropboxs: dropboxData.dropbox,
         tweets: tweetData.tweet,
@@ -53,8 +53,14 @@
 
     methods: {
       searchInput(searchString) {
+        this.slacks = slackData.slack
         this.stringValue = searchString
-        this.slacks = ''
+        this.slacks = this.slacks.filter(slack => 
+        slack.matching_terms.includes(searchString))
+
+        this.contacts = contactData.contacts
+        this.contacts = this.contacts.filter(contact =>
+        contact.matching_terms.includes(searchString))
         },
 
       }
