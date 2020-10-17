@@ -7,6 +7,7 @@
           <th>Username</th>
           <th>Message</th>
           <th>Published</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -14,6 +15,9 @@
           <td>{{ tweet.user }}</td>
           <td>{{ tweet.message }}</td>
           <td>{{ tweet.timestamp }}</td>
+          <td>
+            <button @click="$emit('delete-tweet', tweet.id)">Delete</button>
+          </td>
         </tr>
       </tbody>
     </table>

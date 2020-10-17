@@ -19,7 +19,10 @@
       v-bind:dropboxs="dropboxs"
       v-on:delete-dropbox="deleteDropbox($event)" 
     />
-    <TweetResult v-bind:tweets="tweets" />
+    <TweetResult 
+      v-bind:tweets="tweets" 
+      v-on:delete-tweet="deleteTweet($event)" 
+    />
 
     {{stringValue}}
   </div>
@@ -107,6 +110,11 @@
       deleteDropbox(id) {
         this.dropboxs = this.dropboxs.filter(
           dropbox => dropbox.id !== id
+        )
+      },
+      deleteTweet(id) {
+        this.tweets = this.tweets.filter(
+          tweet => tweet.id !== id
         )
       },
     }
