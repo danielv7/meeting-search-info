@@ -24,7 +24,7 @@
       v-on:delete-tweet="deleteTweet($event)" 
     />
 
-    {{stringValue}}
+    <!--{{stringValue}}-->
   </div>
 </template>
 

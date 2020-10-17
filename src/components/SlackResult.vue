@@ -1,7 +1,7 @@
 <template>
   <div id="slack-result">
     <h5 v-if="slacks.length" class="vertical-left">Slack Content</h5>
-    <table>
+    <table class="striped-table">
       <thead>
         <tr v-if="slacks.length">
           <th>Channel</th>

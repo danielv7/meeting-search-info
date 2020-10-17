@@ -1,7 +1,7 @@
 <template>
   <div id="tweet-result">
     <h5 v-if="tweets.length" class="vertical-left">Relevant Tweet's</h5>
-    <table>
+    <table class="striped-table">
       <thead v-if="tweets.length">
         <tr>
           <th>Username</th>

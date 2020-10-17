@@ -1,7 +1,7 @@
 <template>
   <div id="calendar-result">
     <h5 v-if="calendars.length" class="vertical-left">Calendar Content</h5>
-    <table>
+    <table class="striped-table">
       <thead v-if="calendars.length">
         <tr>
           <th>Meeting Title</th>

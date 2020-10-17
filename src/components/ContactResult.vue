@@ -1,7 +1,7 @@
 <template>
   <div id="contact-result">
     <h5 v-if="contacts.length" class="vertical-left">Contact Information</h5>
-    <table>
+    <table class="striped-table">
       <thead v-if="contacts.length">
         <tr>
           <th>Name</th>
