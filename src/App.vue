@@ -144,6 +144,9 @@ button:hover {
 .small-container {
   max-width: 700px;
 }
+.error-message {
+    color: #d33c40;
+  }
 
 
 </style>

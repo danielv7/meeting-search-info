@@ -4,7 +4,8 @@
       <input v-model="searchString" type="text" placeholder="Search..."/>
       <button class="full-button">Search</button>
     </form>
-    <h5 v-if="stringContent" class="vertical-center">Search Results for "{{stringContent}}"</h5>
+    <h5 v-if="stringContent && !error" class="vertical-center">Search Results for "{{stringContent}}"</h5>
+    <h5 v-if="error" class="error-message vertical-center">❗Please enter a word you would like to search❗</h5>
 
   </div>
 </template>
@@ -16,6 +17,7 @@
       return {
           searchString: '',
           stringContent: '',
+          error: false,
       }
     },
     methods: {
@@ -24,9 +26,15 @@
           this.stringContent = this.searchString;
           this.searchString = this.lowerString
           this.$emit('search-value', this.searchString)
+          this.error = false
           }
+        if (this.searchString === '') {
+          this.error = true
+          this.searchString = '';
+        }
           this.searchString = '';
         }, 
+       
     },
     computed: {
       lowerString() {
