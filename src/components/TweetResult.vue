@@ -1,6 +1,6 @@
 <template>
   <div id="tweet-result">
-    <h5 class="vertical-left">Relevante Tweet's</h5>
+    <h5 class="vertical-left">Relevant Tweet's</h5>
     <table>
       <thead>
         <tr>

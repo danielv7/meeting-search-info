@@ -42,7 +42,7 @@
       return {
         slacks: [],  
         contacts: [],
-        calendars: calendarData.calendar,
+        calendars: [],
         dropboxs: dropboxData.dropbox,
         tweets: tweetData.tweet,
         stringValue: '',
@@ -61,6 +61,12 @@
         this.contacts = contactData.contacts
         this.contacts = this.contacts.filter(contact =>
         contact.matching_terms.includes(searchString))
+
+        this.calendars = calendarData.calendar
+        this.calendars = this.calendars.filter(calendar =>
+        calendar.matching_terms.includes(searchString))
+
+
         },
 
       }
