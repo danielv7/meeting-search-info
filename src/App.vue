@@ -8,6 +8,7 @@
     <CalendarResult v-bind:calendars="calendars" />
     <DropboxResult v-bind:dropboxs="dropboxs" />
     <TweetResult v-bind:tweets="tweets" />
+
     {{stringValue}}
   </div>
 </template>
@@ -19,9 +20,9 @@
   import CalendarResult from '@/components/CalendarResult.vue'
   import DropboxResult from '@/components/DropboxResult.vue'
   import TweetResult from '@/components/TweetResult.vue'
-
-  import { contactData } from './assets/contactData'
+  
   import { slackData } from './assets/slackData'
+  import { contactData } from './assets/contactData'
   import { calendarData } from './assets/calendarData'
   import { dropboxData } from './assets/dropboxData'
   import { tweetData } from './assets/tweetData'
@@ -47,10 +48,15 @@
         stringValue: '',
       }
     },
+
+
+
     methods: {
       searchInput(searchString) {
         this.stringValue = searchString
-        }
+        this.slacks = ''
+        },
+
       }
   }
 
@@ -68,6 +74,7 @@ button:hover {
   border: 1px solid rgb(77, 82, 78);
   
 }
+
 .small-container {
   max-width: 700px;
 }
