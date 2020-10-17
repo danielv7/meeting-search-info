@@ -11,8 +11,14 @@
       v-bind:contacts="contacts"
       v-on:delete-contact="deleteContact($event)" 
     />
-    <CalendarResult v-bind:calendars="calendars" />
-    <DropboxResult v-bind:dropboxs="dropboxs" />
+    <CalendarResult 
+      v-bind:calendars="calendars"
+      v-on:delete-calendar="deleteCanendar($event)"  
+    />
+    <DropboxResult 
+      v-bind:dropboxs="dropboxs"
+      v-on:delete-dropbox="deleteDropbox($event)" 
+    />
     <TweetResult v-bind:tweets="tweets" />
 
     {{stringValue}}
@@ -93,8 +99,16 @@
           contact => contact.id !== id
         )
       },
-      
-        
+      deleteCanendar(id) {
+        this.calendars = this.calendars.filter(
+          calendar => calendar.id !== id
+        )
+      },
+      deleteDropbox(id) {
+        this.dropboxs = this.dropboxs.filter(
+          dropbox => dropbox.id !== id
+        )
+      },
     }
   }
 

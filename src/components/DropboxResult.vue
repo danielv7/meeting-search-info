@@ -8,6 +8,7 @@
           <th>Title</th>
           <th>Shared With</th>
           <th>Date Created</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -16,6 +17,9 @@
           <td>{{ dropbox.title }}</td>
           <td>{{ dropbox.shared_with }}</td>
           <td>{{ dropbox.created }}</td>
+          <td>
+            <button @click="$emit('delete-dropbox', dropbox.id)">Delete</button>
+          </td>
         </tr>
       </tbody>
     </table>

@@ -7,6 +7,7 @@
           <th>Meeting Title</th>
           <th>Meeting Invitees</th>
           <th>Meeting Date & Time</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -14,6 +15,9 @@
           <td>{{ calendar.title }}</td>
           <td>{{ calendar.invitees}}</td>
           <td>{{ calendar.date }}</td>
+          <td>
+            <button @click="$emit('delete-calendar', calendar.id)">Delete</button>
+          </td>
         </tr>
       </tbody>
     </table>
