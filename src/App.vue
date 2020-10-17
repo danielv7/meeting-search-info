@@ -7,7 +7,10 @@
       v-bind:slacks="slacks" 
       v-on:delete-slack="deleteSlack($event)"
     />
-    <ContactResult v-bind:contacts="contacts" />
+    <ContactResult 
+      v-bind:contacts="contacts"
+      v-on:delete-contact="deleteContact($event)" 
+    />
     <CalendarResult v-bind:calendars="calendars" />
     <DropboxResult v-bind:dropboxs="dropboxs" />
     <TweetResult v-bind:tweets="tweets" />
@@ -79,11 +82,19 @@
         tweet.matching_terms.includes(searchString))
 
         },
+      
       deleteSlack(id) {
         this.slacks = this.slacks.filter(
           slack => slack.id !== id
         )
       },
+      deleteContact(id) {
+        this.contacts = this.contacts.filter(
+          contact => contact.id !== id
+        )
+      },
+      
+        
     }
   }
 

@@ -9,6 +9,7 @@
           <th>Email Address</th>
           <th>Phone Number(s)</th>
           <th>Last Contact</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -18,6 +19,9 @@
           <td>{{ contact.emails }}</td>
           <td>{{ contact.phones }}</td>
           <td>{{ contact.last_contact }}</td>
+          <td>
+            <button @click="$emit('delete-contact', contact.id)">Delete</button>
+          </td>
         </tr>
       </tbody>
     </table>
