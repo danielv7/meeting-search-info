@@ -1,8 +1,11 @@
 <template>
-  <div id="app" class="small-container">
+  <div id="app" class="medium-container">
     <h1 class="vertical-center">Search Upcoming Meeting Information</h1>
 
-    <SearchField v-on:search-value="searchInput($event)"/>
+    <SearchField 
+      class="small-container"
+      v-on:search-value="searchInput($event)"
+    />
     <SlackResult 
       v-bind:slacks="slacks" 
       v-on:delete-slack="deleteSlack($event)"
@@ -135,7 +138,12 @@ button:hover {
   
 }
 
-.small-container {
-  max-width: 700px;
+.medium-container {
+  max-width: 1000px;
 }
+.small-container {
+  max-width: 750px;
+}
+
+
 </style>
