@@ -1,8 +1,8 @@
 <template>
   <div id="contact-result">
-    <h5 class="vertical-left">Contact Information</h5>
+    <h5 v-if="contacts.length" class="vertical-left">Contact Information</h5>
     <table>
-      <thead>
+      <thead v-if="contacts.length">
         <tr>
           <th>Name</th>
           <th>Company</th>

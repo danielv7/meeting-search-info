@@ -1,8 +1,8 @@
 <template>
   <div id="dropbox-result">
-    <h5 class="vertical-left">Dropbox Information</h5>
+    <h5 v-if="dropboxs.length" class="vertical-left">Dropbox Information</h5>
     <table>
-      <thead>
+      <thead v-if="dropboxs.length">
         <tr>
           <th>Path</th>
           <th>Title</th>

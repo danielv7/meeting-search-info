@@ -1,9 +1,9 @@
 <template>
   <div id="slack-result">
-    <h5 class="vertical-left">Slack Content</h5>
+    <h5 v-if="slacks.length" class="vertical-left">Slack Content</h5>
     <table>
       <thead>
-        <tr>
+        <tr v-if="slacks.length">
           <th>Channel</th>
           <th>Message</th>
           <th>Date</th>

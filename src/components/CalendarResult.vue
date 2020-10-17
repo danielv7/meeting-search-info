@@ -1,8 +1,8 @@
 <template>
   <div id="calendar-result">
-    <h5 class="vertical-left">Calendar Content</h5>
+    <h5 v-if="calendars.length" class="vertical-left">Calendar Content</h5>
     <table>
-      <thead>
+      <thead v-if="calendars.length">
         <tr>
           <th>Meeting Title</th>
           <th>Meeting Invitees</th>

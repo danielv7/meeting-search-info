@@ -1,8 +1,8 @@
 <template>
   <div id="tweet-result">
-    <h5 class="vertical-left">Relevant Tweet's</h5>
+    <h5 v-if="tweets.length" class="vertical-left">Relevant Tweet's</h5>
     <table>
-      <thead>
+      <thead v-if="tweets.length">
         <tr>
           <th>Username</th>
           <th>Message</th>
