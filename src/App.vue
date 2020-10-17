@@ -43,7 +43,7 @@
         slacks: [],  
         contacts: [],
         calendars: [],
-        dropboxs: dropboxData.dropbox,
+        dropboxs: [],
         tweets: tweetData.tweet,
         stringValue: '',
       }
@@ -53,8 +53,9 @@
 
     methods: {
       searchInput(searchString) {
-        this.slacks = slackData.slack
         this.stringValue = searchString
+
+        this.slacks = slackData.slack
         this.slacks = this.slacks.filter(slack => 
         slack.matching_terms.includes(searchString))
 
@@ -65,6 +66,10 @@
         this.calendars = calendarData.calendar
         this.calendars = this.calendars.filter(calendar =>
         calendar.matching_terms.includes(searchString))
+
+        this.dropboxs = dropboxData.dropbox
+        this.dropboxs = this.dropboxs.filter(dropbox =>
+        dropbox.matching_terms.includes(searchString))
 
 
         },
