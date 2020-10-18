@@ -3,7 +3,6 @@
     <h1 class="vertical-center">Search Upcoming Meeting Information</h1>
 
     <SearchField 
-      class="small-container"
       v-on:search-value="searchInput($event)"
     />
     <SlackResult 
@@ -26,7 +25,6 @@
       v-bind:tweets="tweets" 
       v-on:delete-tweet="deleteTweet($event)" 
     />
-
     <!--{{stringValue}}-->
   </div>
 </template>
@@ -141,12 +139,13 @@ button:hover {
 .medium-container {
   max-width: 1000px;
 }
+
 .small-container {
   max-width: 700px;
 }
+
 .error-message {
     color: #d33c40;
   }
-
 
 </style>

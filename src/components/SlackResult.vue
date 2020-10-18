@@ -33,6 +33,18 @@
   props: {
     slacks: Array,
   },
+  mounted() {
+    this.formatDate() 
+  },
+  methods: {
+    formatDate() {
+      console.log("mounted")
+
+    },
+
+
+  },
+
 }
 </script>
 

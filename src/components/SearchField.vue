@@ -1,7 +1,7 @@
 <template>
-  <div id="seach-field">
+  <div id="seach-field" class="small-container">
     <form @submit.prevent="handleSubmit">
-      <input v-model="searchString" type="text" placeholder="Search..."/>
+      <input :class="{ 'has-error': error }" v-model="searchString" type="text" placeholder="Search..."/>
       <button class="full-button">Search</button>
     </form>
     <h5 v-if="stringContent && !error" class="vertical-center">Search Results for "{{stringContent}}"</h5>
