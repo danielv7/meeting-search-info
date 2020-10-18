@@ -14,7 +14,7 @@
         <tr v-for="tweet in tweets" :key="tweet.id">
           <td>{{ tweet.user }}</td>
           <td>{{ tweet.message }}</td>
-          <td>{{ tweet.timestamp }}</td>
+          <td>{{ dateFormat(tweet.timestamp) }}</td>
           <td>
             <button @click="$emit('delete-tweet', tweet.id)">Delete</button>
           </td>
@@ -30,6 +30,14 @@
   name: 'tweet-result',
   props: {
     tweets: Array,
+  },
+  methods: {
+    dateFormat(date) {
+      date = String(date)
+      date = new Date(date)
+      date = date.toLocaleDateString()
+      return date
+    },
   },
 }
 </script>

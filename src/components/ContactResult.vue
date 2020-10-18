@@ -37,7 +37,6 @@
   },
   methods: {
     dateFormat(date) {
-     
       date = String(date)
       date = new Date(date)
       date = date.toLocaleDateString()

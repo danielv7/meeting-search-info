@@ -44,7 +44,6 @@
       //date = date.toLocaleString()
       //return date
     },
-
   },
  
 }

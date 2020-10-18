@@ -16,7 +16,7 @@
           <td>{{ dropbox.path }}</td>
           <td>{{ dropbox.title }}</td>
           <td>{{ dropbox.shared_with }}</td>
-          <td>{{ dropbox.created }}</td>
+          <td>{{ dateFormat(dropbox.created) }}</td>
           <td>
             <button @click="$emit('delete-dropbox', dropbox.id)">Delete</button>
           </td>
@@ -32,6 +32,14 @@
   name: 'dropbox-result',
   props: {
     dropboxs: Array,
+  },
+  methods: {
+    dateFormat(date) {
+      date = String(date)
+      date = new Date(date)
+      date = date.toLocaleDateString()
+      return date
+    },
   },
 }
 </script>

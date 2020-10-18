@@ -14,7 +14,7 @@
         <tr v-for="calendar in calendars" :key="calendar.id">
           <td>{{ calendar.title }}</td>
           <td>{{ calendar.invitees}}</td>
-          <td>{{ calendar.date }}</td>
+          <td>{{ dateFormat(calendar.date) }}</td>
           <td>
             <button @click="$emit('delete-calendar', calendar.id)">Delete</button>
           </td>
@@ -30,6 +30,14 @@
   name: 'calendar-result',
   props: {
     calendars: Array,
+  },
+  methods: {
+    dateFormat(date) {
+      date = String(date)
+      date = new Date(date)
+      date = date.toLocaleDateString(undefined, {hour:'numeric', minute: '2-digit' })
+      return date
+    },
   },
 }
 </script>
