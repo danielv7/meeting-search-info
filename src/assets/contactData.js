@@ -13,7 +13,7 @@ export const contactData = {
           "+44 171 5555 5555"
         ],
         "matching_terms": ["acme", "john", "john doe"],
-        "last_contact": "2019-02-26"
+        "last_contact": "2019-02-26 12:22:22"
       },
       {
         "id": "31456",
@@ -26,7 +26,7 @@ export const contactData = {
           "+44 171 6666 5555"
         ],
         "matching_terms": ["acme", "robert", "roe", "bob"],
-        "last_contact": "2019-02-29"
+        "last_contact": "2019-02-28 00:22:22"
       },
       {
         "id": "787661",
@@ -39,7 +39,7 @@ export const contactData = {
           "+1 415 555 6666"
         ],
         "matching_terms": ["alice", "other", "alice smith"],
-        "last_contact": "2019-02-29"
+        "last_contact": "2019-02-28 00:22:22"
       }
     ]
   }

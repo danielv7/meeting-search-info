@@ -13,7 +13,7 @@ export const dropboxData = {
           "w2",
           "alice"
         ],
-        "created": "2016-02-01"
+        "created": "2016-02-01 00:22:22"
       },
       {
         "id": "34567",
@@ -26,7 +26,7 @@ export const dropboxData = {
           "acme",
           "invoice"
         ],
-        "created": "2019-02-01"
+        "created": "2019-02-01 00:22:22"
       },
       {
         "id": "56789",
@@ -35,7 +35,7 @@ export const dropboxData = {
         "matching_terms": [
           "invoice"
         ],
-        "created": "2019-02-01"
+        "created": "2019-02-01 00:22:22"
       },
       {
         "id": "3456789",
@@ -49,7 +49,7 @@ export const dropboxData = {
           "proposal",
           "mou"
         ],
-        "created": "2019-01-19"
+        "created": "2019-01-19 00:22:22"
       },
       {
         "id": "3556789",
@@ -62,7 +62,7 @@ export const dropboxData = {
           "acme",
           "meeting notes"
         ],
-        "created": "2019-02-04"
+        "created": "2019-02-04 00:22:22"
       }
     ]
   }
