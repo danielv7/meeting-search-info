@@ -14,7 +14,7 @@
         <tr v-for="slack in slacks" :key="slack.id">
           <td>{{ slack.channel }}</td>
           <td><strong>{{ slack.author }}</strong>-{{ slack.message }}</td>
-          <td>{{ slack.timestamp }}</td>
+          <td>{{ dateFormat(slack.timestamp) }}</td>
           <td>
             <button @click="$emit('delete-slack', slack.id)">Delete</button>
           </td>
@@ -33,18 +33,17 @@
   props: {
     slacks: Array,
   },
-  mounted() {
-    this.formatDate() 
-  },
   methods: {
-    formatDate() {
-      console.log("mounted")
-
+    dateFormat(date) {
+      date = String(date)
+      date = new Date(date)
+      date = date.toLocaleDateString(undefined, {hour:'numeric'})
+      return date
+    
     },
 
-
   },
-
+ 
 }
 </script>
 
