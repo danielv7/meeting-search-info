@@ -37,9 +37,12 @@
     dateFormat(date) {
       date = String(date)
       date = new Date(date)
-      date = date.toLocaleDateString(undefined, {hour:'numeric'})
+      date = date.toLocaleDateString(undefined, {hour:'numeric', minute: '2-digit' })
       return date
-    
+      //date = String(date)
+      //date = new Date(date)
+      //date = date.toLocaleString()
+      //return date
     },
 
   },

@@ -18,7 +18,7 @@
           <td>{{ contact.company }}</td>
           <td>{{ contact.emails }}</td>
           <td>{{ contact.phones }}</td>
-          <td>{{ contact.last_contact }}</td>
+          <td>{{ dateFormat(contact.last_contact) }}</td>
           <td>
             <button @click="$emit('delete-contact', contact.id)">Delete</button>
           </td>
@@ -34,6 +34,16 @@
   name: 'content-result',
   props: {
     contacts: Array,
+  },
+  methods: {
+    dateFormat(date) {
+     
+      date = String(date)
+      date = new Date(date)
+      date = date.toLocaleDateString()
+      return date
+    },
+
   },
 }
 </script>
