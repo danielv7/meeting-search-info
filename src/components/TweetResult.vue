@@ -37,6 +37,7 @@
       date = new Date(date)
       date = date.toLocaleDateString()
       return date
+      
     },
   },
 }
