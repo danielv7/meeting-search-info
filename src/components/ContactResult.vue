@@ -16,8 +16,8 @@
         <tr v-for="contact in contacts" :key="contact.id">
           <td>{{ contact.name }}</td>
           <td>{{ contact.company }}</td>
-          <td>{{ contact.emails }}</td>
-          <td>{{ contact.phones }}</td>
+          <td>{{ emailFormat(contact.emails) }}</td>
+          <td>{{ phoneFormat(contact.phones) }}</td>
           <td>{{ dateFormat(contact.last_contact) }}</td>
           <td>
             <button @click="$emit('delete-contact', contact.id)">Delete</button>
@@ -41,6 +41,14 @@
       date = new Date(date)
       date = date.toLocaleDateString()
       return date
+    },
+    emailFormat(email) {
+      email = email.join(", ");
+      return email
+    },
+    phoneFormat(phoneNum) {
+      phoneNum = phoneNum.join(" | ")
+      return phoneNum
     },
 
   },
