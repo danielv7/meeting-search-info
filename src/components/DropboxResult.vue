@@ -19,6 +19,7 @@
           <td>{{ dateFormat(dropbox.created) }}</td>
           <td>
             <button @click="$emit('delete-dropbox', dropbox.id)">Delete</button>
+            <button @click="$emit('toggle-dropboxpin', [dropbox.pin, dropbox.id])">Pin</button>
           </td>
         </tr>
       </tbody>

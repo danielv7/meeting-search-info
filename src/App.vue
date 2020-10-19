@@ -23,6 +23,7 @@
     <DropboxResult 
       v-bind:dropboxs="dropboxs"
       v-on:delete-dropbox="deleteDropbox($event)" 
+      v-on:toggle-dropboxpin="toggleDropboxPin($event)"
     />
     <TweetResult 
       v-bind:tweets="tweets" 
@@ -152,6 +153,17 @@
       },
       fillterCalendars() {
         this.calendars = this.calendars.sort((x,y) => Number(y.pin) - Number(x.pin))
+      },
+      toggleDropboxPin(pinid) {
+        for (const dropbox of this.dropboxs) {
+          if (dropbox.id === pinid[1]) {
+            dropbox.pin = !pinid[0]
+            this.fillterDropboxs()
+          }
+        }
+      },
+      fillterDropboxs() {
+        this.dropboxs = this.dropboxs.sort((x,y) => Number(y.pin) - Number(x.pin))
       },
       
     },
