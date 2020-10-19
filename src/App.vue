@@ -12,7 +12,8 @@
     />
     <ContactResult 
       v-bind:contacts="contacts"
-      v-on:delete-contact="deleteContact($event)" 
+      v-on:delete-contact="deleteContact($event)"
+      v-on:toggle-contactpin="toggleContactPin($event)" 
     />
     <CalendarResult 
       v-bind:calendars="calendars"
@@ -122,18 +123,25 @@
           if (slack.id === pinid[1]) {
             slack.pin = !pinid[0]
             console.log(slack)
-
-            //call filter
             this.fillterSlacks()
           }
         }
       },
       fillterSlacks() {
-        //console.log("Called filter")
         this.slacks = this.slacks.sort((x,y) => Number(y.pin) - Number(x.pin))
-        console.log(this.slacks)
-
       },
+      toggleContactPin(pinid) {
+        for (const contact of this.contacts) {
+          if (contact.id === pinid[1]) {
+            contact.pin = !pinid[0]
+            this.fillterContacts()
+          }
+        }
+      },
+      fillterContacts() {
+        this.contacts = this.contacts.sort((x,y) => Number(y.pin) - Number(x.pin))
+      },
+      
     },
   }
 
@@ -144,12 +152,10 @@ button {
   background: #38d8a3;
   border: 1px solid #38d8a3;
   margin: 2px;
-  
 }
 button:hover {
   background-color: rgb(77, 82, 78); 
   border: 1px solid rgb(77, 82, 78);
-  
 }
 
 .medium-container {
@@ -163,5 +169,4 @@ button:hover {
 .error-message {
     color: #d33c40;
   }
-
 </style>

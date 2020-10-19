@@ -2,6 +2,7 @@ export const contactData = {
     "contacts": [
       {
         "id": "12345",
+        "pin": false,
         "name": "John Doe",
         "company": "Acme Inc",
         "emails": [
@@ -17,6 +18,7 @@ export const contactData = {
       },
       {
         "id": "31456",
+        "pin": false,
         "name": "Robert Roe",
         "company": "Acme Inc",
         "emails": [
@@ -30,6 +32,7 @@ export const contactData = {
       },
       {
         "id": "787661",
+        "pin": false,
         "name": "Alice Smith",
         "company": "Other Corp",
         "emails": [

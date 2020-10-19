@@ -20,7 +20,8 @@
           <td>{{ phoneFormat(contact.phones) }}</td>
           <td>{{ dateFormat(contact.last_contact) }}</td>
           <td>
-            <button @click="$emit('delete-contact', contact.id)">Delete</button>
+            <button class="full-button" @click="$emit('delete-contact', contact.id)">Delete</button>
+            <button class="full-button" @click="$emit('toggle-contactpin', [contact.pin, contact.id])">Pin</button>
           </td>
         </tr>
       </tbody>
