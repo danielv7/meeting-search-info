@@ -17,12 +17,12 @@
           <td>{{ dateFormat(slack.timestamp) }}</td>
           <td>
             <button @click="$emit('delete-slack', slack.id)">Delete</button>
+            <button @click="$emit('toggle-slackpin', [slack.pin, slack.id])">Pin</button>
           </td>
         </tr>
       </tbody>
     </table>
 
-  
 
   </div>
 </template>
@@ -39,14 +39,22 @@
       date = new Date(date)
       date = date.toLocaleDateString(undefined, {hour:'numeric', minute: '2-digit' })
       return date
-      //date = String(date)
-      //date = new Date(date)
-      //date = date.toLocaleString()
-      //return date
     },
   },
  
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+button {
+  background: #38d8a3;
+  border: 1px solid #38d8a3;
+  margin: 2px;
+  
+}
+button:hover {
+  background-color: rgb(77, 82, 78); 
+  border: 1px solid rgb(77, 82, 78);
+  
+}
+</style>

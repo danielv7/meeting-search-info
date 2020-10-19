@@ -2,6 +2,7 @@ export const slackData = {
     "slack": [
       {
         "id": "12345",
+        "pin": false,
         "channel": "chatter",
         "author": "alice",
         "message": "Who's up for lunch right now?",
@@ -14,6 +15,7 @@ export const slackData = {
       },
       {
         "id": "12346",
+        "pin": false,
         "channel": "chatter",
         "author": "bob",
         "message": "I am up for lunch!",
@@ -26,6 +28,7 @@ export const slackData = {
       },
       {
         "id": "12347",
+        "pin": false,
         "channel": "chatter",
         "author": "carol",
         "message": "Me too @alice!",
@@ -38,6 +41,7 @@ export const slackData = {
       },
       {
         "id": "22345",
+        "pin": false,
         "channel": "customer-chatter",
         "author": "alice",
         "message": "Did any of you meet with Acme folks last week?",
@@ -50,6 +54,7 @@ export const slackData = {
       },
       {
         "id": "22346",
+        "pin": false,
         "channel": "customer-chatter",
         "author": "dave",
         "message": "Yeah, I met with Bob there",
@@ -62,6 +67,7 @@ export const slackData = {
       },
       {
         "id": "22347",
+        "pin": false,
         "channel": "customer-chatter",
         "author": "dave",
         "message": "I think John from Acme was in that meeting too",
@@ -71,6 +77,20 @@ export const slackData = {
           "john",
           "acme"
         ]
-      }
+      },
+      {
+        "id": "22349",
+        "pin": false,
+        "channel": "customer-chatter",
+        "author": "dave",
+        "message": "Do we a meeting today with John to talk acme?",
+        "timestamp": "2019-03-3 12:00:02",
+        "matching_terms": [
+          "dave",
+          "john",
+          "acme"
+        ]
+      },
+
     ]
   }

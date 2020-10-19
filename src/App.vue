@@ -8,6 +8,7 @@
     <SlackResult 
       v-bind:slacks="slacks" 
       v-on:delete-slack="deleteSlack($event)"
+      v-on:toggle-slackpin="toggleSlackPin($event)"
     />
     <ContactResult 
       v-bind:contacts="contacts"
@@ -114,7 +115,26 @@
           tweet => tweet.id !== id
         )
       },
-    }
+      toggleSlackPin(pinid) {
+        console.log(pinid[0])
+        console.log(pinid[1])
+        for (const slack of this.slacks) {
+          if (slack.id === pinid[1]) {
+            slack.pin = !pinid[0]
+            console.log(slack)
+
+            //call filter
+            this.fillterSlacks()
+          }
+        }
+      },
+      fillterSlacks() {
+        //console.log("Called filter")
+        this.slacks = this.slacks.sort((x,y) => Number(y.pin) - Number(x.pin))
+        console.log(this.slacks)
+
+      },
+    },
   }
 
 </script>
@@ -123,8 +143,8 @@
 button {
   background: #38d8a3;
   border: 1px solid #38d8a3;
+  margin: 2px;
   
-
 }
 button:hover {
   background-color: rgb(77, 82, 78); 
