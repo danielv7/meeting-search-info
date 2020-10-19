@@ -65,8 +65,6 @@
       }
     },
 
-
-
     methods: {
       searchInput(searchString) {
         this.stringValue = searchString
@@ -90,9 +88,7 @@
         this.tweets = tweetData.tweet
         this.tweets = this.tweets.filter(tweet =>
         tweet.matching_terms.includes(searchString))
-
         },
-      
       deleteSlack(id) {
         this.slacks = this.slacks.filter(
           slack => slack.id !== id
