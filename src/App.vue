@@ -124,7 +124,6 @@
         for (const slack of this.slacks) {
           if (slack.id === pinid[1]) {
             slack.pin = !pinid[0]
-            console.log(slack)
             this.fillterSlacks()
           }
         }
