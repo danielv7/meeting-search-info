@@ -28,8 +28,9 @@
     <TweetResult 
       v-bind:tweets="tweets" 
       v-on:delete-tweet="deleteTweet($event)" 
+      v-on:toggle-tweetpin="toggleTweetPin($event)"
     />
-    <!--{{stringValue}}-->
+
   </div>
 </template>
 
@@ -40,7 +41,6 @@
   import CalendarResult from '@/components/CalendarResult.vue'
   import DropboxResult from '@/components/DropboxResult.vue'
   import TweetResult from '@/components/TweetResult.vue'
-
   import { slackData } from './assets/slackData'
   import { contactData } from './assets/contactData'
   import { calendarData } from './assets/calendarData'
@@ -165,7 +165,17 @@
       fillterDropboxs() {
         this.dropboxs = this.dropboxs.sort((x,y) => Number(y.pin) - Number(x.pin))
       },
-      
+      toggleTweetPin(pinid) {
+        for (const tweet of this.tweets) {
+          if (tweet.id === pinid[1]) {
+            tweet.pin = !pinid[0]
+            this.fillterTweets()
+          }
+        }
+      },
+      fillterTweets() {
+        this.tweets = this.tweets.sort((x,y) => Number(y.pin) - Number(x.pin))
+      },
     },
   }
 

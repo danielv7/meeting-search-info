@@ -17,6 +17,7 @@
           <td>{{ dateFormat(tweet.timestamp) }}</td>
           <td>
             <button @click="$emit('delete-tweet', tweet.id)">Delete</button>
+            <button @click="$emit('toggle-tweetpin', [tweet.pin, tweet.id])">Pin</button>
           </td>
         </tr>
       </tbody>
