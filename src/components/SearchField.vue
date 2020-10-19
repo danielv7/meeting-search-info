@@ -49,4 +49,13 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
+  button {
+    background: #38d8a3;
+    border: 1px solid #38d8a3;
+  
+  }
+  .button:hover {
+    background-color: rgb(77, 82, 78); 
+    border: 1px solid rgb(77, 82, 78);
+  }
 </style>

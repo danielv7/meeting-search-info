@@ -15,7 +15,7 @@
         <tr v-for="dropbox in dropboxs" :key="dropbox.id">
           <td>{{ dropbox.path }}</td>
           <td>{{ dropbox.title }}</td>
-          <td>{{ dropbox.shared_with }}</td>
+          <td>{{ emailFormat(dropbox.shared_with) }}</td>
           <td>{{ dateFormat(dropbox.created) }}</td>
           <td>
             <button @click="$emit('delete-dropbox', dropbox.id)">Delete</button>
@@ -40,6 +40,11 @@
       date = date.toLocaleDateString()
       return date
     },
+    emailFormat(email) {
+      email = email.join(", ");
+      return email
+    },
+    
   },
 }
 </script>
