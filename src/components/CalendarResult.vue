@@ -17,6 +17,7 @@
           <td>{{ dateFormat(calendar.date) }}</td>
           <td>
             <button @click="$emit('delete-calendar', calendar.id)">Delete</button>
+            <button @click="$emit('toggle-calendarpin', [calendar.pin, calendar.id])">Pin</button>
           </td>
         </tr>
       </tbody>

@@ -18,6 +18,7 @@
     <CalendarResult 
       v-bind:calendars="calendars"
       v-on:delete-calendar="deleteCanendar($event)"  
+      v-on:toggle-calendarpin="toggleCalendarPin($event)"
     />
     <DropboxResult 
       v-bind:dropboxs="dropboxs"
@@ -140,6 +141,17 @@
       },
       fillterContacts() {
         this.contacts = this.contacts.sort((x,y) => Number(y.pin) - Number(x.pin))
+      },
+      toggleCalendarPin(pinid) {
+        for (const calendar of this.calendars) {
+          if (calendar.id === pinid[1]) {
+            calendar.pin = !pinid[0]
+            this.fillterCalendars()
+          }
+        }
+      },
+      fillterCalendars() {
+        this.calendars = this.calendars.sort((x,y) => Number(y.pin) - Number(x.pin))
       },
       
     },

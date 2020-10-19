@@ -2,6 +2,7 @@ export const calendarData = {
     "calendar": [
       {
         "id": "12345",
+        "pin": false,
         "title": "Acme Proposal Meeting",
         "invitees": "dave, john, bob, carol",
         "matching_terms": [
@@ -15,6 +16,7 @@ export const calendarData = {
       },
       {
         "id": "12346",
+        "pin": false,
         "title": "Acme Final Delivery Meeting",
         "invitees": "dave, john, bob, alice",
         "matching_terms": [
