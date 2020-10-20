@@ -17,7 +17,8 @@
           <td>{{ dateFormat(calendar.date) }}</td>
           <td>
             <button @click="$emit('delete-calendar', calendar.id)">Delete</button>
-            <button @click="$emit('toggle-calendarpin', [calendar.pin, calendar.id])">Pin</button>
+            <button v-if="calendar.pin ===false" @click="$emit('toggle-calendarpin', [calendar.pin, calendar.id])">Pin</button>
+            <button v-else @click="$emit('toggle-calendarpin', [calendar.pin, calendar.id])">Un-pin</button>
           </td>
         </tr>
       </tbody>

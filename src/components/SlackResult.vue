@@ -17,7 +17,8 @@
           <td>{{ dateFormat(slack.timestamp) }}</td>
           <td>
             <button @click="$emit('delete-slack', slack.id)">Delete</button>
-            <button @click="$emit('toggle-slackpin', [slack.pin, slack.id])">Pin</button>
+            <button v-if="slack.pin ===false" @click="$emit('toggle-slackpin', [slack.pin, slack.id])">Pin</button>
+            <button v-else @click="$emit('toggle-slackpin', [slack.pin, slack.id])">Un-pin</button>
           </td>
         </tr>
       </tbody>
