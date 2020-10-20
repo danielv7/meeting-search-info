@@ -22,7 +22,7 @@
           <td>
             <button class="full-button" @click="$emit('delete-contact', contact.id)">Delete</button>
             <button v-if="contact.pin ===false" class="full-button" @click="$emit('toggle-contactpin', [contact.pin, contact.id])">Pin</button>
-            <button v-else @click="$emit('toggle-contactpin', [contact.pin, contact.id])">Un-pin</button>
+            <button v-else class="full-button" @click="$emit('toggle-contactpin', [contact.pin, contact.id])">Un-pin</button>
           </td>
         </tr>
       </tbody>
