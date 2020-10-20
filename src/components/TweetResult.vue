@@ -17,7 +17,8 @@
           <td>{{ dateFormat(tweet.timestamp) }}</td>
           <td>
             <button @click="$emit('delete-tweet', tweet.id)">Delete</button>
-            <button @click="$emit('toggle-tweetpin', [tweet.pin, tweet.id])">Pin</button>
+            <button v-if="tweet.pin ===false" @click="$emit('toggle-tweetpin', [tweet.pin, tweet.id])">Pin</button>
+            <button v-else @click="$emit('toggle-tweetpin', [tweet.pin, tweet.id])">Un-pin</button>
           </td>
         </tr>
       </tbody>

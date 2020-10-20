@@ -19,7 +19,8 @@
           <td>{{ dateFormat(dropbox.created) }}</td>
           <td>
             <button class="full-button" @click="$emit('delete-dropbox', dropbox.id)">Delete</button>
-            <button class="full-button" @click="$emit('toggle-dropboxpin', [dropbox.pin, dropbox.id])">Pin</button>
+            <button v-if="dropbox.pin ===false" class="full-button" @click="$emit('toggle-dropboxpin', [dropbox.pin, dropbox.id])">Pin</button>
+            <button v-else @click="$emit('toggle-dropboxpin', [dropbox.pin, dropbox.id])">Un-pin</button>
           </td>
         </tr>
       </tbody>
