@@ -52,7 +52,6 @@
       phoneNum = phoneNum.join(" | ")
       return phoneNum
     },
-
   },
 }
 </script>
