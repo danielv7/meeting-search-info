@@ -1,4 +1,4 @@
-# meeting-search Project
+# meeting-search PROJECT
 
 ## Project setup - How to Run the Project
 ```
@@ -22,7 +22,8 @@ npm run serve
 
 ## Notes
 
-- Vue.js, Javascipt, HTML, & CSS
+- Estimate time spent on project 5 hours
+
 
 
 
